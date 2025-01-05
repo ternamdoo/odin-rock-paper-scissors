@@ -23,9 +23,18 @@ function getComputerChoice () {
 // Get choice from human user
 function getHumanChoice () {
     let choice = prompt("Enter either: 'rock', 'paper', or 'scissors' ");
-    return choice;
+    switch (choice.toLowerCase()) {
+        case "rock":
+        case "paper":
+        case "scissors":
+            return choice;
+            break;
+        default:
+            alert("Your entry doesn't match any of the valid game keyword.")
+            alert("Try again using a valid keyword.")
+    }
 };
-console.log(getHumanChoice());
+// console.log(getHumanChoice());
 
 // Keep track of players score
 let computerScore = 0;
