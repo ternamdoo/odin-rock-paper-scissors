@@ -72,7 +72,7 @@ function playRound(humanChoice, computerChoice) {
             humanScore++;
         }
     } else {
-        console.log("There was an eror in one or more player choices!");
+        console.log("There was an error in one or more player choices!");
         console.log(`Computer choice: ${computerChoice}`);
         console.log(`Human choice: ${humanChoice}`);
     }
