@@ -39,3 +39,41 @@ function getHumanChoice () {
 // Keep track of players score
 let computerScore = 0;
 let humanScore = 0;
+
+// Logic to play a single round
+function playRound(humanChoice, computerChoice) {
+    humanChoice = humanChoice.toLowerCase();
+    
+    if (humanChoice === computerChoice) {
+        console.log("It's a tie! Play again.");
+    } else if (humanChoice === "rock") {
+        if (computerChoice === "paper") {
+            console.log("You lose! Paper beats Rock");
+            computerScore++;
+        } else if (computerChoice === "scissors") {
+            console.log("You win! Rock beats Scissors.");
+            humanScore++;
+        }
+    } else if (humanChoice === "paper") {
+        if (computerChoice === "rock") {
+            console.log("You win! Paper beats Rock");
+            humanScore++;
+        } else if (computerChoice === "scissors") {
+            console.log("You lose! Scissors beats Paper.");
+            computerScore++;
+        }
+    } else if (humanChoice === "scissors") {
+        if (computerChoice === "rock") {
+            console.log("You lose! Rock beats Scissors");
+            computerScore++;
+        } else if (computerChoice === "paper") {
+            console.log("You win! Scissors beats Paper.");
+            humanScore++;
+        }
+    } else {
+        console.log("There was an eror in one or more player choices!");
+        console.log(`Computer choice: ${computerChoice}`);
+        console.log(`Human choice: ${humanChoice}`);
+    }
+}
+
