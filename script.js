@@ -26,3 +26,7 @@ function getHumanChoice () {
     return choice;
 };
 console.log(getHumanChoice());
+
+// Keep track of players score
+let computerScore = 0;
+let humanScore = 0;
