@@ -32,6 +32,7 @@ function getHumanChoice () {
         default:
             alert("Your entry doesn't match any of the valid game keyword.")
             alert("Try again using a valid keyword.")
+            return choice
     }
 };
 // console.log(getHumanChoice());
