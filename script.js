@@ -1,4 +1,4 @@
-console.log("Hello World")
+console.log("Hello World");
 
 // randomly generate computer choice
 function getComputerChoice() {
@@ -21,10 +21,10 @@ function getHumanChoice() {
         case "rock":
         case "paper":
         case "scissors":
-            return humanInputLowercase
+            return humanInputLowercase;
         default:
-            console.log("You did not enter a valid game keyword. The next round wont be played successfully")
-            return ""
+            console.log("You did not enter a valid game keyword. The next round wont be played successfully");
+            return "";
     }
 }
 
