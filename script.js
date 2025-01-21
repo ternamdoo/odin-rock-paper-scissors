@@ -28,37 +28,34 @@ function getHumanChoice() {
     }
 }
 
-// store players choices for a single game round
-const humanSelection = getComputerChoice();
-const computerSelection = getComputerChoice();
-
-playRound(humanSelection, computerSelection);
-
-
 // play 5 rounds and announce the winner if there's any
 function playGame() {
-    // Play one round
-    function playRound(humanChoice, computerChoice) {
+    // logic to play one round
+    function playRound() {
+        const humanSelection = getHumanChoice();
+        const computerSelection = getComputerChoice();
+
+        // play the game
         console.log("Rock, Paper, Scissors, shoot!");
-        console.log("Human:", humanChoice);
-        console.log("Computer:", computerChoice);
+        console.log("Human:", humanSelection);
+        console.log("Computer:", computerSelection);
         switch (true) {
             // if the round's a tie, do nothing
-            case (humanChoice === computerChoice):
-                console.log(`It's a tie! Both players chose ${humanChoice}`);
+            case (humanSelection === computerSelection):
+                console.log(`It's a tie! Both players chose ${humanSelection}`);
                 break;
             // increment human player score if human wins
-            case (humanChoice === "rock" && computerChoice === "scissors"):
-            case (humanChoice === "paper" && computerChoice === "rock"):
-            case (humanChoice === "scissors" && computerChoice === "paper"):
-                console.log(`Bravo! ${humanChoice} beats ${computerChoice}. Human wins`);
+            case (humanSelection === "rock" && computerSelection === "scissors"):
+            case (humanSelection === "paper" && computerSelection === "rock"):
+            case (humanSelection === "scissors" && computerSelection === "paper"):
+                console.log(`Bravo! ${humanSelection} beats ${computerSelection}. Human wins`);
                 humanScore++;  
                 break;
             // increment computer score if computer wins
-            case (computerChoice === "rock" && humanChoice === "scissors"):
-            case (computerChoice === "paper" && humanChoice === "rock"):
-            case (computerChoice === "scissors" && humanChoice === "paper"):
-                console.log(`Bravo! ${computerChoice} beats ${humanChoice}. Computer wins`);
+            case (computerSelection === "rock" && humanSelection === "scissors"):
+            case (computerSelection === "paper" && humanSelection === "rock"):
+            case (computerSelection === "scissors" && humanSelection === "paper"):
+                console.log(`Bravo! ${computerSelection} beats ${humanSelection}. Computer wins`);
                 computerScore++;  
                 break;
             // if the code block below runs, it means there's a flaw in the game logic above. DEBUG!!!
@@ -73,4 +70,13 @@ function playGame() {
     // Track game scores
     let humanScore = 0;
     let computerScore = 0;
+
+    // play 5 rounds
+    playRound();
+    playRound();
+    playRound();
+    playRound();
+    playRound();
+
+
 }
