@@ -28,13 +28,6 @@ function getHumanChoice() {
     }
 }
 
-// Track game scores
-let humanScore = 0;
-let computerScore = 0;
-
-
-
-
 // store players choices for a single game round
 const humanSelection = getComputerChoice();
 const computerSelection = getComputerChoice();
@@ -76,4 +69,8 @@ function playGame() {
         console.log("Human score:", humanScore);
         console.log("Computer score:", computerScore);
     }
+
+    // Track game scores
+    let humanScore = 0;
+    let computerScore = 0;
 }
