@@ -16,7 +16,7 @@ function getComputerChoice() {
 // Get human choice
 function getHumanChoice() {
     let humanInput = prompt("Enter a valid choice between 'rock', 'paper, or 'scissors': ")
-    let humanInputLowercase = humanInput.toLowerCase()
+    let humanInputLowercase = humanInput.toLowerCase().trim()
     switch (humanInputLowercase) {
         case "rock":
         case "paper":
