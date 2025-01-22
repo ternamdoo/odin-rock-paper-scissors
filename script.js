@@ -1,4 +1,5 @@
 console.log("Hello World");
+console.log("Call the playGame() function here to play the game.")
 
 // randomly generate computer choice
 function getComputerChoice() {
