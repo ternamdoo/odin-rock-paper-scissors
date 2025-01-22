@@ -67,7 +67,7 @@ function playGame() {
         console.log("Computer score:", computerScore);
     }
 
-    // Track game scores
+    // rack game scores
     let humanScore = 0;
     let computerScore = 0;
 
@@ -78,5 +78,12 @@ function playGame() {
     playRound();
     playRound();
 
-
+    // Declare a winner
+    if (humanScore === computerScore) {
+        console.log("The game ended in a tie after 5 rounds");
+    } else if (humanScore > computerScore) {
+        console.log(`After 5 game rounds, human beat computer ${humanScore} to ${computerScore}`);
+    } else {
+        console.log(`After 5 game rounds, computer beat human ${computerScore} to ${humanScore}`);
+    }
 }
