@@ -24,7 +24,7 @@ function getHumanChoice() {
         case "scissors":
             return humanInputLowercase;
         default:
-            console.log("You did not enter a valid game keyword. The next round wont be played successfully");
+            console.log("You did not enter a valid game keyword. The next round won't be played successfully");
             return "";
     }
 }
@@ -61,14 +61,14 @@ function playGame() {
                 break;
             // if the code block below runs, it means there's a flaw in the game logic above. DEBUG!!!
             default:
-                console.log("Something's wrong. This live isn't supposed to execute.")
+                console.log("Something's wrong. This line isn't supposed to execute.")
         }
 
         console.log("Human score:", humanScore);
         console.log("Computer score:", computerScore);
     }
 
-    // rack game scores
+    // record game scores
     let humanScore = 0;
     let computerScore = 0;
 
@@ -83,8 +83,8 @@ function playGame() {
     if (humanScore === computerScore) {
         console.log("The game ended in a tie after 5 rounds");
     } else if (humanScore > computerScore) {
-        console.log(`After 5 game rounds, human beat computer ${humanScore} to ${computerScore}`);
+        console.log(`After 5 game rounds, human beat computer ${humanScore} - ${computerScore}`);
     } else {
-        console.log(`After 5 game rounds, computer beat human ${computerScore} to ${humanScore}`);
+        console.log(`After 5 game rounds, computer beat human ${computerScore} - ${humanScore}`);
     }
 }
