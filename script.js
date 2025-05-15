@@ -3,15 +3,18 @@ console.log("Call the playGame() function here to play the game.")
 
 // randomly generate computer choice
 function getComputerChoice() {
-    let randomInt = Math.floor(Math.random() * 3)
-    switch (randomInt) {
-        case 0:
-            return "rock";
-        case 1:
-            return "paper";
-        case 2:
-            return "scissors";
-    }
+    const validGameChoices = ["rock", "paper", "scissors"];
+    const computerSelection = validGameChoices[Math.floor(Math.random() * validGameChoices.length)];
+    return computerSelection;
+    // let randomInt = Math.floor(Math.random() * 3)
+    // switch (randomInt) {
+    //     case 0:
+    //         return "rock";
+    //     case 1:
+    //         return "paper";
+    //     case 2:
+    //         return "scissors";
+    // }
 }
 
 // Get human choice
@@ -61,7 +64,7 @@ function playGame() {
                 break;
             // if the code block below runs, it means there's a flaw in the game logic above. DEBUG!!!
             default:
-                console.log("Something's wrong. This line isn't supposed to execute.")
+                console.log("Something's wrong. This line isn't supposed to execute.");
         }
 
         console.log("Human score:", humanScore);
