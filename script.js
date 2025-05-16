@@ -13,7 +13,10 @@ humanOptions.forEach((option) => {
     })
 });
 
-// randomly generate computer choice
+let humanScore = 0;
+let computerScore = 0;
+
+// randomly pick computer choice from an array of options
 function getComputerChoice() {
     const validGameChoices = ["rock", "paper", "scissors"];
     const computerChoice = validGameChoices[Math.floor(Math.random() * validGameChoices.length)];
