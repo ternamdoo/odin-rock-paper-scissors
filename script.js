@@ -6,12 +6,12 @@ const humanOptions = document.querySelectorAll("button");
 humanOptions.forEach((option) => {
     option.addEventListener("click", () => {
         let humanSelection = option.textContent.toLowerCase();
-        console.log(humanSelection);
+        // console.log(humanSelection);
         let computerSelection = getComputerChoice();
-        console.log(computerSelection);
-        // playRound();
+        // console.log(computerSelection);
+        playRound(humanSelection, computerSelection);
     })
-})
+});
 
 // randomly generate computer choice
 function getComputerChoice() {
