@@ -44,31 +44,28 @@ function getComputerChoice() {
 // }
 
 // logic to play one round
-function playRound() {
-    const humanSelection = getHumanChoice();
-    const computerChoice = getComputerChoice();
-
+function playRound(humanSelection, computerSelection) {
     // play the game
     console.log("Rock, Paper, Scissors, shoot!");
     console.log("Human:", humanSelection);
-    console.log("Computer:", computerChoice);
+    console.log("Computer:", computerSelection);
     switch (true) {
         // if the round's a tie, do nothing
-        case (humanSelection === computerChoice):
+        case (humanSelection === computerSelection):
             console.log(`It's a tie! Both players chose ${humanSelection}`);
             break;
         // increment human player score if human wins
-        case (humanSelection === "rock" && computerChoice === "scissors"):
-        case (humanSelection === "paper" && computerChoice === "rock"):
-        case (humanSelection === "scissors" && computerChoice === "paper"):
-            console.log(`Bravo! ${humanSelection} beats ${computerChoice}. Human wins`);
+        case (humanSelection === "rock" && computerSelection === "scissors"):
+        case (humanSelection === "paper" && computerSelection === "rock"):
+        case (humanSelection === "scissors" && computerSelection === "paper"):
+            console.log(`Bravo! ${humanSelection} beats ${computerSelection}. Human wins`);
             humanScore++;  
             break;
         // increment computer score if computer wins
-        case (computerChoice === "rock" && humanSelection === "scissors"):
-        case (computerChoice === "paper" && humanSelection === "rock"):
-        case (computerChoice === "scissors" && humanSelection === "paper"):
-            console.log(`Bravo! ${computerChoice} beats ${humanSelection}. Computer wins`);
+        case (computerSelection === "rock" && humanSelection === "scissors"):
+        case (computerSelection === "paper" && humanSelection === "rock"):
+        case (computerSelection === "scissors" && humanSelection === "paper"):
+            console.log(`Bravo! ${computerSelection} beats ${humanSelection}. Computer wins`);
             computerScore++;  
             break;
         // if the code block below runs, it means there's a flaw in the game logic above. DEBUG!!!
