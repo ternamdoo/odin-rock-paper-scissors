@@ -20,29 +20,6 @@ function getComputerChoice() {
     return computerChoice;
 }
 
-// // Get human choice
-// function getHumanChoice() {
-//     // const humanOptions = document.querySelectorAll("button");
-//     humanOptions.forEach((option) => {
-//         option.addEventListener("click", () => {
-//             return option.textContent
-//         })
-//     })
-
-
-    // let humanInput = prompt("Enter a valid choice between 'rock', 'paper, or 'scissors': ")
-    // let humanInputLowercase = humanInput.toLowerCase().trim()
-    // switch (humanInputLowercase) {
-    //     case "rock":
-    //     case "paper":
-    //     case "scissors":
-    //         return humanInputLowercase;
-    //     default:
-    //         console.log("You did not enter a valid game keyword. The next round won't be played successfully");
-    //         return "";
-    // }
-// }
-
 // logic to play one round
 function playRound(humanSelection, computerSelection) {
     // play the game
