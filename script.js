@@ -9,16 +9,10 @@ const humanOptions = document.querySelectorAll("button");
 humanOptions.forEach((option) => {
     option.addEventListener("click", () => {
         let humanSelection = option.textContent.toLowerCase();
-        // console.log(humanSelection);
         let computerSelection = getComputerChoice();
-        // console.log(computerSelection);
         playRound(humanSelection, computerSelection);
     })
 });
-
-
-// let humanScore = 0;
-// let computerScore = 0;
 
 // randomly pick computer choice from an array of options
 function getComputerChoice() {
@@ -32,8 +26,6 @@ function playRound(humanSelection, computerSelection) {
     const roundInfo = document.querySelector(".current-round-result");
     const announceRoundWinner = document.createElement("p");
     roundInfo.appendChild(announceRoundWinner);
-    // console.log("Human:", humanSelection);
-    // console.log("Computer:", computerSelection);
 
     // play the game
     switch (true) {
