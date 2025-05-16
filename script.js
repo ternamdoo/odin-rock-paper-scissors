@@ -41,15 +41,15 @@ function playRound(humanSelection, computerSelection) {
             announceRoundWinner.textContent = `Bravo! ${humanSelection} beats ${computerSelection}. Human wins`;
             humanScore.textContent = Number(humanScore.textContent) + 1;
             break;
-            // increment computer score if computer wins
-            case (computerSelection === "rock" && humanSelection === "scissors"):
-                case (computerSelection === "paper" && humanSelection === "rock"):
-                    case (computerSelection === "scissors" && humanSelection === "paper"):
-                        announceRoundWinner.textContent = `Bravo! ${computerSelection} beats ${humanSelection}. Computer wins`;
-                        computerScore.textContent = Number(computerScore.textContent) + 1;
-                        break;
-                        // if the code block below runs, it means there's a flaw in the game logic above. DEBUG!!!
-                        default:
-                            announceRoundWinner.textContent = "Something's wrong. This line isn't supposed to execute.";
-                        }
+        // increment computer score if computer wins
+        case (computerSelection === "rock" && humanSelection === "scissors"):
+        case (computerSelection === "paper" && humanSelection === "rock"):
+        case (computerSelection === "scissors" && humanSelection === "paper"):
+            announceRoundWinner.textContent = `Bravo! ${computerSelection} beats ${humanSelection}. Computer wins`;
+            computerScore.textContent = Number(computerScore.textContent) + 1;
+                break;
+        // if the code block below runs, it means there's a flaw in the game logic above. DEBUG!!!
+        default:
+            announceRoundWinner.textContent = "Something's wrong. This line isn't supposed to execute.";
+    }
 }
