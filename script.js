@@ -1,6 +1,9 @@
 console.log("Hello World");
 console.log("Call the playGame() function here to play the game.")
 
+const humanScore = document.querySelector(".human-score");
+const computerScore = document.querySelector(".computer-score");
+
 // get player choices and play a single round
 const humanOptions = document.querySelectorAll("button");
 humanOptions.forEach((option) => {
@@ -13,8 +16,9 @@ humanOptions.forEach((option) => {
     })
 });
 
-let humanScore = 0;
-let computerScore = 0;
+
+// let humanScore = 0;
+// let computerScore = 0;
 
 // randomly pick computer choice from an array of options
 function getComputerChoice() {
@@ -27,7 +31,7 @@ function getComputerChoice() {
 function playRound(humanSelection, computerSelection) {
     const roundInfo = document.querySelector(".current-round-result");
     const announceRoundWinner = document.createElement("p");
-    roundInfo.appendChild(announceRoundWinner);    
+    roundInfo.appendChild(announceRoundWinner);
     // console.log("Human:", humanSelection);
     // console.log("Computer:", computerSelection);
 
@@ -42,14 +46,14 @@ function playRound(humanSelection, computerSelection) {
         case (humanSelection === "paper" && computerSelection === "rock"):
         case (humanSelection === "scissors" && computerSelection === "paper"):
             announceRoundWinner.textContent = `Bravo! ${humanSelection} beats ${computerSelection}. Human wins`;
-            humanScore++;  
+            humanScore.textContent = Number(humanScore.textContent) + 1;
             break;
         // increment computer score if computer wins
         case (computerSelection === "rock" && humanSelection === "scissors"):
         case (computerSelection === "paper" && humanSelection === "rock"):
         case (computerSelection === "scissors" && humanSelection === "paper"):
             announceRoundWinner.textContent = `Bravo! ${computerSelection} beats ${humanSelection}. Computer wins`;
-            computerScore++;  
+            computerScore.textContent = Number(computerScore.textContent) + 1;
             break;
         // if the code block below runs, it means there's a flaw in the game logic above. DEBUG!!!
         default:
