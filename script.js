@@ -25,32 +25,35 @@ function getComputerChoice() {
 
 // logic to play one round
 function playRound(humanSelection, computerSelection) {
+    const roundInfo = document.querySelector(".current-round-result");
+    const announceRoundWinner = document.createElement("p");
+    roundInfo.appendChild(announceRoundWinner);    
+    // console.log("Human:", humanSelection);
+    // console.log("Computer:", computerSelection);
+
     // play the game
-    console.log("Rock, Paper, Scissors, shoot!");
-    console.log("Human:", humanSelection);
-    console.log("Computer:", computerSelection);
     switch (true) {
         // if the round's a tie, do nothing
         case (humanSelection === computerSelection):
-            console.log(`It's a tie! Both players chose ${humanSelection}`);
+            announceRoundWinner.textContent = `It's a tie! Both players chose ${humanSelection}`;
             break;
         // increment human player score if human wins
         case (humanSelection === "rock" && computerSelection === "scissors"):
         case (humanSelection === "paper" && computerSelection === "rock"):
         case (humanSelection === "scissors" && computerSelection === "paper"):
-            console.log(`Bravo! ${humanSelection} beats ${computerSelection}. Human wins`);
+            announceRoundWinner.textContent = `Bravo! ${humanSelection} beats ${computerSelection}. Human wins`;
             humanScore++;  
             break;
         // increment computer score if computer wins
         case (computerSelection === "rock" && humanSelection === "scissors"):
         case (computerSelection === "paper" && humanSelection === "rock"):
         case (computerSelection === "scissors" && humanSelection === "paper"):
-            console.log(`Bravo! ${computerSelection} beats ${humanSelection}. Computer wins`);
+            announceRoundWinner.textContent = `Bravo! ${computerSelection} beats ${humanSelection}. Computer wins`;
             computerScore++;  
             break;
         // if the code block below runs, it means there's a flaw in the game logic above. DEBUG!!!
         default:
-            console.log("Something's wrong. This line isn't supposed to execute.");
+            announceRoundWinner.textContent = "Something's wrong. This line isn't supposed to execute.";
     }
 
     console.log("Human score:", humanScore);
