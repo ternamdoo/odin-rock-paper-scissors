@@ -26,7 +26,6 @@ function getComputerChoice() {
 function playRound(humanSelection, computerSelection) {
     const roundInfo = document.querySelector(".current-round-result");
     const announceRoundWinner = document.createElement("p");
-    roundInfo.appendChild(announceRoundWinner);
 
     // play the game
     switch (true) {
@@ -52,4 +51,5 @@ function playRound(humanSelection, computerSelection) {
         default:
             announceRoundWinner.textContent = "Something's wrong. This line isn't supposed to execute.";
     }
+    roundInfo.appendChild(announceRoundWinner);
 }
