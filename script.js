@@ -48,5 +48,20 @@ function playRound(humanSelection, computerSelection) {
             announceRoundWinner.textContent = "Something's wrong. This line isn't supposed to execute.";
     }
     roundInfo.appendChild(announceRoundWinner);
+    checkWinner();
 }
 
+// define the winning score
+const WINNING_SCORE = 5;
+
+// function to check for a winner after each round
+function checkWinner() {
+    const currentHumanScore = Number(humanScore.textContent);
+    const currentComputerScore = Number(computerScore.textContent);
+
+    if (currentHumanScore === WINNING_SCORE) {
+        alert("Human won the game!");
+    } else if (currentComputerScore === WINNING_SCORE) {
+        alert("Computer won the game!");
+    }
+}
