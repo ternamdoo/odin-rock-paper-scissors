@@ -1,6 +1,3 @@
-console.log("Hello World");
-console.log("Call the playGame() function here to play the game.")
-
 const humanScore = document.querySelector(".human-score");
 const computerScore = document.querySelector(".computer-score");
 
@@ -13,7 +10,6 @@ humanOptions.forEach((option) => {
         playRound(humanSelection, computerSelection);
     })
 });
-
 
 // randomly pick computer choice from an array of options
 function getComputerChoice() {
@@ -53,3 +49,4 @@ function playRound(humanSelection, computerSelection) {
     }
     roundInfo.appendChild(announceRoundWinner);
 }
+
