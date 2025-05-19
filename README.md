@@ -6,11 +6,11 @@ The game is played according to the rules of the real world [Rock Paper Scissors
 
 ## Requirements
 
-This game will be played in the developer console of a web browser.
+Any modern browser should play the game just fine.
 
 ## How to Play
 To play the game:
-1. A user must open the game's _index.html_ file in their web browser.
-2. Then the user should open  the developer console for the page.
-3. Calling the function _playGame()_ in the browser console starts a game. The user will enter a valid game option for each round while the computer will randomly choose a game option for each round.
-4. After 5 rounds, a winner will be logged in the console. If the is no winner, a draw message is logged.
+1. A user must first visit the game's [live page](https://ternamdoo.github.io/odin-rock-paper-scissors/).
+2. Once on the page, the user may interact with the game options on the UI to play the game.
+3. A game round is played with a computer program once the user clicks a game option. Computer choice is always randomly generated on each round. The game logs each round's results and increments player scores when they win.
+4. Once any user reaches 5 points (by winning 5 times), the current game iteration ends. A _Restart Game_ button appears below the game log and the user may click on it to play another iteration of the game. For now, the user can only start a new game after the current game ends.
