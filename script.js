@@ -20,7 +20,7 @@ function getComputerChoice() {
 
 // logic to play one round
 function playRound(humanSelection, computerSelection) {
-    const roundInfo = document.querySelector(".current-round-result");
+    const roundInfo = document.querySelector(".game-log");
     const announceRoundWinner = document.createElement("p");
 
     // play the game
@@ -60,8 +60,35 @@ function checkWinner() {
     const currentComputerScore = Number(computerScore.textContent);
 
     if (currentHumanScore === WINNING_SCORE) {
-        alert("Human won the game!");
+        endGame("Human");
     } else if (currentComputerScore === WINNING_SCORE) {
-        alert("Computer won the game!");
+        endGame("Computer");
     }
+}
+
+// function to handle game end
+function endGame(winner) {
+    // create a container for game end messages if it doesn't exist
+    let gameEndMessageArea = document.querySelector("#game-end-area");
+    if (!gameEndMessageArea) {
+        gameEndMessageArea = document.createElement("div");
+        gameEndMessageArea.setAttribute("id", "game-end-area");
+        document.body.appendChild(gameEndMessageArea);
+    }
+    // announce the winner
+    const winnerMessage = document.createElement("h2");
+    winnerMessage.textContent = `${winner} wins the game! Final Score - Human: ${humanScore.textContent}, Computer: ${computerScore.textContent}`;
+    gameEndMessageArea.appendChild(winnerMessage);
+
+    // disable Rock, Paper, Scissors buttons
+    humanOptions.forEach(button => {
+        button.disabled = true;
+    });
+
+    // add a restart button
+    const restartButton = document.createElement("button");
+    restartButton.textContent = "Restart Game";
+    restartButton.setAttribute("id", "restart-button"); // Added an ID for potential styling/selection
+    restartButton.addEventListener("click", restartGame);
+    gameEndMessageArea.appendChild(restartButton);
 }
