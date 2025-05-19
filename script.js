@@ -92,3 +92,26 @@ function endGame(winner) {
     restartButton.addEventListener("click", restartGame);
     gameEndMessageArea.appendChild(restartButton);
 }
+
+// function to restart the game
+function restartGame() {
+    // reset scores
+    humanScore.textContent = "0";
+    computerScore.textContent = "0";
+
+    // clear game log
+    const roundInfoDiv = document.querySelector(".game-log");
+    const roundResultParagraphs = roundInfoDiv.querySelectorAll("p");
+    roundResultParagraphs.forEach(p => p.remove());
+
+    // remove winner message and restart button container
+    const gameEndMessageArea = document.getElementById("game-end-area");
+    if (gameEndMessageArea) {
+        gameEndMessageArea.remove();
+    }
+
+    // enable Rock, Paper, Scissors buttons
+    humanOptions.forEach(button => {
+        button.disabled = false;
+    });
+}
